@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "CougarJam.sln"
+    "dotnet.defaultSolution": "CougarJam2024.sln"
 }
