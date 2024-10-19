@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GameJam24.unity
     guid: dce550caced51d149b4d0131bacfceba
+  - enabled: 1
+    path: Assets/Scenes/CombatScene.unity
+    guid: ec05f8b5515a1b343b5280cf54e29225
+  - enabled: 1
+    path: Assets/Scenes/PuzzleScene.unity
+    guid: 7c4a4e92948055449ab09ac2b38ab55d
+  - enabled: 1
+    path: Assets/Scenes/PlatformingScene.unity
+    guid: af185abd6ab19524f875600db71fbe0d
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: f755082fd81b8e24bb7a3557d96c55fa
   m_configObjects: {}

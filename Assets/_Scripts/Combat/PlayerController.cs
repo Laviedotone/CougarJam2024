@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;  // Movement speed of the player
     public Rigidbody2D rb;        // Reference to the Rigidbody2D component
     public Animator animator;     // Reference to the Animator component
     public SpriteRenderer spriteRenderer;  // Reference to the SpriteRenderer component
+    public CombatManager combatManager;  // Reference to CombatManager to call PlayerAttack or PlayerRecover
 
     private Vector2 movement;     // Stores movement input
     private string currentFacingDirection = "Idle_Right";  // Track the current facing direction
@@ -76,5 +77,18 @@ public class PlayerMovement : MonoBehaviour
         // When movement is disabled (e.g., during dialog), stop the player immediately
         movement = Vector2.zero;
         rb.velocity = Vector2.zero;  // Ensure the player stops moving
+    }
+
+    // Detect when the player enters the attack or heal icon triggers
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("AttackIcon"))
+        {
+            combatManager.PlayerAttack();  // Call the attack method when the player reaches the attack icon
+        }
+        else if (other.gameObject.CompareTag("RecoverIcon"))
+        {
+            combatManager.PlayerRecover();  // Call the recover method when the player reaches the recover icon
+        }
     }
 }
