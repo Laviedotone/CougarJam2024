@@ -50,7 +50,7 @@ public class CombatManager : MonoBehaviour
 
     public void PlayerRecover()
     {
-        playerHealth.RecoverHealth(5);  // Recover 5 HP
+        playerHealth.RecoverHealth(7);  // Recover 5 HP
         playerTurn = false;  // End player turn
         StartCoroutine(WitchAttack());
     }
@@ -80,7 +80,9 @@ public class CombatManager : MonoBehaviour
         }
 
         // Stop the particle system attack
+        
         witchAttackParticles.Stop();
+        witchAttackParticles.Clear();
         isMoving = false;  // Stop the particle system movement
 
         // After the attack, switch back to player turn
