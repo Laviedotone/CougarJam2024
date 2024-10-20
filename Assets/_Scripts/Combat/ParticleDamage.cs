@@ -18,7 +18,7 @@ public class ParticleDamage : MonoBehaviour
                 }else{
                     playerHealth.TakeDamage(damage);
                 }
-                
+            
             }
         }
     }
